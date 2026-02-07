@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Royal Gold Hotel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🏨 Royal Gold Hotel</h1>
+  <p>Luxury • Comfort • Premium Experience</p>
+</header>
+
+<section class="hero">
+  <div class="hero-overlay">
+    <h2>Experience Luxury Stay</h2>
+    <p>Book premium rooms with world-class facilities</p>
+    <button onclick="scrollToBooking()">Book Now</button>
+  </div>
+</section>
+
+<!-- BOOKING SEARCH -->
+<section class="booking-section" id="booking">
+  <h2>Search Rooms</h2>
+  <div class="booking-form">
+    <input type="date" id="checkin">
+    <input type="date" id="checkout">
+
+    <select id="location">
+      <option value="">Select Location</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Goa">Goa</option>
+      <option value="Bhubaneswar">Bhubaneswar</option>
+    </select>
+
+    <select id="roomType">
+      <option value="">Select Room Type</option>
+      <option value="Deluxe">Deluxe Room</option>
+      <option value="Premium">Premium Room</option>
+      <option value="Suite">Royal Suite</option>
+    </select>
+
+    <input type="number" id="guests" placeholder="Guests" min="1">
+    <button onclick="searchRooms()">Search</button>
+  </div>
+</section>
+
+<!-- ROOM CARDS -->
+<section class="rooms-section">
+  <h2>Available Rooms</h2>
+  <div class="rooms" id="roomResults"></div>
+</section>
+
+<!-- BOOKING SUMMARY -->
+<section class="summary-section" id="summary" style="display:none;">
+  <h2>Booking Summary</h2>
+  <div class="summary-box">
+    <p><strong>Location:</strong> <span id="sumLocation"></span></p>
+    <p><strong>Room:</strong> <span id="sumRoom"></span></p>
+    <p><strong>Guests:</strong> <span id="sumGuests"></span></p>
+    <p><strong>Check-in:</strong> <span id="sumCheckin"></span></p>
+    <p><strong>Check-out:</strong> <span id="sumCheckout"></span></p>
+    <p><strong>Price/Night:</strong> ₹<span id="sumPrice"></span></p>
+    <hr>
+    <h3>Total: ₹<span id="sumTotal"></span></h3>
+
+    <h3>Payment Method</h3>
+    <select id="paymentMethod">
+      <option value="">Select Payment</option>
+      <option>UPI</option>
+      <option>Credit Card</option>
+      <option>Debit Card</option>
+      <option>Net Banking</option>
+    </select>
+    <button onclick="confirmBooking()">Confirm & Pay</button>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <h2>Hotel Gallery</h2>
+  <div class="gallery">
+    <img src="images/room1.jpg" onclick="openModal(this.src)">
+    <img src="images/bathroom.jpg" onclick="openModal(this.src)">
+    <img src="images/bedroom.jpg" onclick="openModal(this.src)">
+    <img src="images/pool.jpg" onclick="openModal(this.src)">
+  </div>
+</section>
+
+<div class="modal" id="imgModal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <h2>📞 Contact Us</h2>
+  <div class="contact-box">
+    <p><strong>Phone:</strong> <a href="tel:7730907269">+91 7730907269</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/917730907269" target="_blank">Chat on WhatsApp</a></p>
+    <p><strong>Email:</strong> <a href="mailto:Jyotijyotishman35@gmail.com">Jyotijyotishman35@gmail.com</a></p>
+  </div>
+
+  <!-- FEEDBACK FORM -->
+  <h3>💬 Send Feedback</h3>
+  <form class="feedback-form" onsubmit="sendFeedback(event)">
+    <input type="text" id="fbName" placeholder="Your Name" required>
+    <input type="email" id="fbEmail" placeholder="Your Email" required>
+    <textarea id="fbMessage" placeholder="Your Feedback..." required></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Royal Gold Hotel | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+function sendFeedback(e) {
+  e.preventDefault();
+  let name = document.getElementById("fbName").value;
+  let email = document.getElementById("fbEmail").value;
+  let msg = document.getElementById("fbMessage").value;
+
+  alert("Thank you " + name + "! Your feedback has been submitted.");
+  document.querySelector(".feedback-form").reset();
+}
+</script>
+
+</body>
+</html>

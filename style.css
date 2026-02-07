@@ -1,0 +1,781 @@
+body {
+  font-family: "Poppins", Arial;
+  margin: 0;
+  background: #0b0b0b;
+  color: white;
+}
+
+header {
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  padding: 15px 40px;
+  border-bottom: 2px solid gold;
+}
+
+header h1 {
+  color: gold;
+  margin: 0;
+}
+
+.hero {
+  height: 80vh;
+  background: url("images/pool.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: gold;
+}
+
+.hero button {
+  padding: 12px 30px;
+  border: none;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: white;
+}
+
+.gallery-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 2px solid transparent;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: gold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 80%;
+  border-radius: 10px;
+  border: 3px solid gold;
+}
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial;
+  margin: 0;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  padding: 15px 40px;
+  border-bottom: 2px solid gold;
+  text-align: center;
+}
+
+header h1 {
+  color: gold;
+  margin: 0;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 80vh;
+  background: url("images/pool.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: gold;
+}
+
+.btn-primary, .btn-gold {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: gold;
+  color: black;
+}
+
+.btn-primary:hover {
+  background: white;
+}
+
+/* BOOKING SECTION */
+.booking-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.booking-section h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  background: #000;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid gold;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.booking-form button {
+  grid-column: span 4;
+  margin-top: 10px;
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 2px solid transparent;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: gold;
+}
+
+/* BOOK SECTION */
+.book-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #000, #1a1a1a);
+}
+
+.book-section h2 {
+  color: gold;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 80%;
+  border-radius: 10px;
+  border: 3px solid gold;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .booking-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .booking-form button {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+  .booking-form button {
+    grid-column: span 1;
+  }
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial;
+  margin: 0;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  padding: 15px 40px;
+  border-bottom: 2px solid gold;
+  text-align: center;
+}
+
+header h1 {
+  color: gold;
+  margin: 0;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 80vh;
+  background: url("images/pool.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: gold;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* BUTTONS */
+.btn-primary, .btn-gold {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  min-width: 140px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: gold;
+  color: black;
+}
+
+.btn-primary:hover {
+  background: white;
+}
+
+.btn-gold {
+  background: gold;
+  color: black;
+}
+
+/* BOOKING SECTION */
+.booking-section {
+  padding: 50px 10px;
+  text-align: center;
+  background: #111;
+}
+
+.booking-section h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+/* RESPONSIVE FORM */
+.booking-form {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #000;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid gold;
+}
+
+.form-group {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.booking-form button {
+  flex: 1 1 100%;
+  font-size: 1rem;
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+  padding: 50px 10px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 2px solid transparent;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: gold;
+}
+
+/* BOOK SECTION */
+.book-section {
+  padding: 60px 10px;
+  text-align: center;
+  background: linear-gradient(135deg, #000, #1a1a1a);
+}
+
+.book-section h2 {
+  color: gold;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 80%;
+  border-radius: 10px;
+  border: 3px solid gold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary, .btn-gold {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(90deg, black, gold);
+}
+
+header h1 {
+  color: gold;
+  font-size: 2rem;
+}
+
+/* HERO */
+.hero {
+  height: 60vh;
+  background: url("images/room1.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero button {
+  padding: 12px 30px;
+  border: none;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* BOOKING FORM */
+.booking-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.booking-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  min-width: 150px;
+}
+
+.booking-form button {
+  padding: 10px 20px;
+  background: gold;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* ROOMS */
+.rooms-section {
+  padding: 40px 20px;
+}
+
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.room-card {
+  background: #111;
+  border: 1px solid gold;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.room-card:hover {
+  transform: scale(1.03);
+}
+
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.room-card .info {
+  padding: 15px;
+}
+
+.room-card h3 {
+  color: gold;
+}
+
+.room-card button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: gold;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h2 { font-size: 1.5rem; }
+  .booking-form { flex-direction: column; }
+}
+
+
+
+
+
+
+.room-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 260px;
+}
+
+.room-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.room-card button {
+  background: gold;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.summary-section {
+  padding: 40px;
+  background: #161515;
+}
+
+.summary-box {
+  max-width: 500px;
+  margin: auto;
+  background: #088879;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.summary-box button {
+  width: 100%;
+  margin-top: 15px;
+  background: black;
+  color: gold;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 50px 10%;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.contact-box p a {
+  color: gold;
+  text-decoration: none;
+}
+
+.feedback-form {
+  max-width: 500px;
+  margin: 20px auto;
+  display: grid;
+  gap: 10px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.feedback-form button {
+  background: gold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
